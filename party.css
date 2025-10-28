@@ -249,17 +249,22 @@ footer {
   }
 }
 
+/* Responsive navbar for narrow screens or landscape phones */
 @media screen and (max-width: 600px) {
   .navbar {
-    position: static;       /* lets it flow below logo */
-    transform: none;        /* removes vertical centering */
+    position: static;       /* move below the logo */
+    transform: none;        /* remove vertical centering */
     margin: 10px 0 0 0;     /* space above links */
   }
 
   .navbar ul {
-    flex-direction: row;     /* still horizontal, or use column if you want stacked */
-    justify-content: flex-start;
-    flex-wrap: wrap;         /* wrap if not enough space */
+    flex-direction: column;   /* stack links vertically */
+    align-items: flex-start;  /* left-align links */
+    padding-left: 0;
+  }
+
+  .navbar li {
+    margin: 5px 0;            /* spacing between links */
   }
 }
 
