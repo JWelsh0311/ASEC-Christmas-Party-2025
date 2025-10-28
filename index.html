@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASEC Christmas Party 2025</title>
+  <link rel="stylesheet" href="party.css">
+</head>
+<body>
+<div class="snow-container"></div>
+
+
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Logo centered -->
+      <img src="ASEC.jpg" alt="ASEC Logo" class="logo">
+      <!-- Nav bar left-aligned -->
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home">
+  <h1>🎄 Christmas Party 2025 🎄</h1>
+  <!-- Rotating Christmas quotes immediately below header -->
+  <p id="quote" class="quote-text"></p>
+
+  <div class="flyer-container">
+    <img src="venue.jpeg" alt="ASEC Christmas Party Flyer" class="flyer">
+	<p>The Meadows Event Center</p>
+    <p>1045 Inglewood Dr, Fernley, NV 89408</p>
+  </div>
+</section>
+
+    <!-- Rotating Christmas quotes -->
+    <p id="quote" class="quote-text"></p>
+  </main>
+
+  <footer>
+    <p>© 2025 John Welsh. Images provided by ASEC and The Meadows Event Center.</p>
+  </footer>
+
+  <script>
+    const quotes = [
+      "May your days be merry and bright!",
+      "It’s the most wonderful time of the year!",
+      "Keep calm and jingle all the way!",
+      "Eat, drink, and be merry — it’s Christmas!",
+      "Ho Ho Ho! Merry Christmas and Happy New Year!",
+      "All is calm, all is bright.",
+      "Believe in the magic of Christmas.",
+      "Tis the season to sparkle and shine!",
+      "Peace, joy, and Christmas cookies for all!",
+      "Santa’s watching — be good!"
+    ];
+
+    let index = 0;
+    const quoteElement = document.getElementById("quote");
+
+    function showQuote() {
+      quoteElement.style.opacity = 0;
+      setTimeout(() => {
+        quoteElement.textContent = quotes[index];
+        quoteElement.style.opacity = 1;
+        index = (index + 1) % quotes.length;
+      }, 500);
+    }
+
+    showQuote();
+    setInterval(showQuote, 5000);
+  </script>
+  
+  <script>
+const snowContainer = document.querySelector('.snow-container');
+const numberOfSnowflakes = 100; // adjust for heavier or lighter snowfall
+
+for (let i = 0; i < numberOfSnowflakes; i++) {
+  const snowflake = document.createElement('div');
+  snowflake.classList.add('snowflake');
+  snowflake.textContent = '❄';  // you can use other unicode snowflakes too
+  snowflake.style.left = Math.random() * 100 + 'vw'; // random horizontal position
+  snowflake.style.animationDuration = 5 + Math.random() * 10 + 's'; // random speed
+  snowflake.style.fontSize = 5 + Math.random() * 15 + 'px'; // random size
+  snowContainer.appendChild(snowflake);
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+/* -----------------------------
+   General Page Style
+----------------------------- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+
+  background: linear-gradient(to bottom, #8B0000 0%, #8B0000 60%, #FF6666 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 20px 0;
+}
+
+section {
+  padding: 10px 0;
+}
+
+/* -----------------------------
+   Header / White strip with logo and nav
+----------------------------- */
+.site-header {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-bottom: 0px solid #ccc;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.header-container .logo {
+  max-width: 350px;
+  width: 60%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.navbar {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar li {
+  margin-right: 15px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #8B0000;
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    position: static;
+    transform: none;
+    margin-bottom: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar li {
+    margin: 5px 0;
+  }
+}
+
+/* -----------------------------
+   Rotating Christmas Quotes
+----------------------------- */
+.quote-text {
+  color: #216A50;
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 8px;
+  animation: fadeIn 1s ease-in-out;
+  transition: opacity 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* -----------------------------
+   Home / Headers
+----------------------------- */
+#home h1,
+#gallery h1 {
+  font-size: 3.5em;
+  margin: 10px 0;
+}
+
+/* -----------------------------
+   Flyer
+----------------------------- */
+.flyer-container {
+  margin-top: 10px;
+}
+
+.flyer {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* -----------------------------
+   Collapsible Tiles / Gallery
+----------------------------- */
+.tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto 20px auto;
+}
+
+.tile {
+  width: 100%;
+}
+
+.collapsible {
+  width: 100%;
+  background-color: #216A50;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s;
+}
+
+.collapsible:hover {
+  background-color: #1B523F;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.content img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* -----------------------------
+   Footer
+----------------------------- */
+footer {
+  background-color: transparent;
+  padding: 10px 0;
+  font-size: 0.9em;
+  color: #fff;
+}
+
+.snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* ensures you can still click links/buttons */
+  z-index: -1;          /* behind all content */
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  font-size: 10px;       /* size of snowflake */
+  color: #fff;
+  user-select: none;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* -----------------------------
+   Responsive
+----------------------------- */
+@media screen and (max-width: 768px) {
+  .header-container .logo {
+    width: 70%;
+  }
+
+  .flyer {
+    width: 95%;
+  }
+
+  .tiles-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-container .logo {
+    width: 80%;
+  }
+
+  .tiles-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+
+
+
+
