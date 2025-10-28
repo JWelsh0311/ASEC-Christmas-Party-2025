@@ -49,7 +49,7 @@ section {
 
 .navbar {
   position: absolute;
-  left: 20px;          /* moves the navbar closer to left edge */
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -246,6 +246,20 @@ footer {
 
   .tiles-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    position: static;       /* lets it flow below logo */
+    transform: none;        /* removes vertical centering */
+    margin: 10px 0 0 0;     /* space above links */
+  }
+
+  .navbar ul {
+    flex-direction: row;     /* still horizontal, or use column if you want stacked */
+    justify-content: flex-start;
+    flex-wrap: wrap;         /* wrap if not enough space */
   }
 }
 
