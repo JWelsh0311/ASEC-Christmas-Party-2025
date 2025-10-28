@@ -49,21 +49,21 @@ section {
 
 .navbar {
   position: absolute;
-  left: 50px;
+  left: 20px;          /* moves the navbar closer to left edge */
   top: 50%;
   transform: translateY(-50%);
 }
 
 .navbar ul {
+  display: flex;
+  justify-content: flex-start; /* aligns links to the left */
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .navbar li {
-  margin-right: 15px;
+  margin-right: 15px; /* spacing between links */
 }
 
 .navbar a {
