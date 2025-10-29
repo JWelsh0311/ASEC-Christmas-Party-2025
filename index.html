@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="party.css">
 </head>
 <body>
-<div class="snow-container"></div>
 
+<div class="snow-container"></div>
 
   <header class="site-header">
     <div class="header-container">
@@ -20,7 +20,7 @@
 
   <main>
     <section id="home">
-  <h1 style="font-size:4em;">Christmas 2025</h1>
+  <h1 style="font-size:2.5em;">Christmas 2025</h1>
   <!-- Rotating Christmas quotes immediately below header -->
   <p id="quote" class="quote-text"></p>
 
@@ -41,13 +41,9 @@
 </div>
 
 </section>
-
-    <!-- Rotating Christmas quotes -->
-    <p id="quote" class="quote-text"></p>
   </main>
  
   <section id="gallery">
-      <h1 style="font-size:3.5em;">📸 Photo Gallery</h1>
 
       <div class="tiles-grid">
         <!-- 21 Tiles -->
@@ -243,7 +239,7 @@
   
   <script>
 const snowContainer = document.querySelector('.snow-container');
-const numberOfSnowflakes = 100; // adjust for heavier or lighter snowfall
+const numberOfSnowflakes = 50; // adjust for heavier or lighter snowfall
 
 for (let i = 0; i < numberOfSnowflakes; i++) {
   const snowflake = document.createElement('div');

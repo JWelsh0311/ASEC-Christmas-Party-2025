@@ -7,7 +7,6 @@ body {
   padding: 0;
   color: #fff;
   text-align: center;
-
   background: linear-gradient(to bottom, #8B0000 0%, #8B0000 60%, #FF6666 100%);
   min-height: 100vh;
   display: flex;
@@ -71,15 +70,18 @@ header-container {
 ----------------------------- */
 #home,
 #gallery {
-  padding-top: 0px;    /* space above section content */
-  padding-bottom: 0px; /* space below section content */
-  margin: 0;            /* remove extra default margins */
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 0;
 }
 
+/* -----------------------------
+   Flyer Section
+----------------------------- */
 .flyer-container {
   position: relative;
   max-width: 900px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 0px auto;
   text-align: center;
 }
 
@@ -106,27 +108,16 @@ header-container {
   height: auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  top: 50%; /* vertically aligned with text */
+  top: 50%;
   transform: translateY(-50%);
 }
 
 .flyer-left {
-  left: -45%; /* move left to align with text center */
+  left: -45%;
 }
 
 .flyer-right {
-  right: -45%; /* move right to align with text center */
-}
-
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .flyer-side {
-    position: static;
-    width: 80%;
-    margin: 10px auto;
-    transform: none;
-    display: block;
-  }
+  right: -45%;
 }
 
 /* -----------------------------
@@ -188,21 +179,24 @@ footer {
   color: #fff;
 }
 
+/* -----------------------------
+   Snow Effect
+----------------------------- */
 .snow-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* ensures you can still click links/buttons */
-  z-index: -1;          /* behind all content */
+  pointer-events: none;
+  z-index: -1;
   overflow: hidden;
 }
 
 .snowflake {
   position: absolute;
   top: -10px;
-  font-size: 10px;       /* size of snowflake */
+  font-size: 10px;
   color: #fff;
   user-select: none;
   animation: fall linear infinite;
@@ -217,14 +211,38 @@ footer {
    Responsive
 ----------------------------- */
 @media screen and (max-width: 768px) {
+  /* Header */
   .header-container .logo {
     width: 70%;
   }
 
-  .flyer {
-    width: 95%;
+  /* Flyer Section */
+  .flyer-left,
+  .flyer-right {
+    position: static;
+    transform: none;
+    display: block;
+    width: 90%;
+    max-width: 400px; /* same size as main image */
+    height: auto;
+    margin: 10px auto;
   }
 
+  .flyer-main {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .flyer-text {
+    position: static;
+    transform: none;
+    margin: 10px 0;
+  }
+
+  /* Tiles (Gallery) */
   .tiles-grid {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
@@ -239,6 +257,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
+
 
 
 
