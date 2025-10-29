@@ -76,19 +76,57 @@ header-container {
   margin: 0;            /* remove extra default margins */
 }
 
-/* -----------------------------
-   Flyer
------------------------------ */
 .flyer-container {
-  margin-top: 0px;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  text-align: center;
 }
 
-.flyer {
+.flyer-main {
   width: 90%;
-  max-width: 600px;
+  max-width: 400px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: block;
+  margin: 0 auto;
+}
+
+.flyer-text {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+/* Side images */
+.flyer-side {
+  position: absolute;
+  width: 90%;
+  max-width: 400px; /* same as main image */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  top: 50%; /* vertically aligned with text */
+  transform: translateY(-50%);
+}
+
+.flyer-left {
+  left: -45%; /* move left to align with text center */
+}
+
+.flyer-right {
+  right: -45%; /* move right to align with text center */
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .flyer-side {
+    position: static;
+    width: 80%;
+    margin: 10px auto;
+    transform: none;
+    display: block;
+  }
 }
 
 /* -----------------------------
