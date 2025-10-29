@@ -20,7 +20,8 @@ main {
 }
 
 section {
-  padding: 10px 0;
+  padding: 60px 0; /* equal top and bottom padding for all sections */
+  margin: 0;       /* remove any default margins */
 }
 
 /* -----------------------------
@@ -47,54 +48,6 @@ header-container {
   margin: 0 auto;
 }
 
-.navbar {
-  position: absolute;  /* absolute so it doesn't affect logo centering */
-  top: 10px;           /* slightly below top of page */
-  left: 20px;          /* distance from left edge */
-}
-
-.navbar ul {
-  display: flex;
-  flex-direction: column; /* vertical links */
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar li {
-  margin: 5px 0;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  font-size: 1.5em;
-  transition: color 0.3s;
-}
-
-.navbar a:hover,
-.navbar a.active {
-  color: #8B0000;
-}
-
-@media screen and (max-width: 480px) {
-  .navbar {
-    position: static;
-    transform: none;
-    margin-bottom: 10px;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar li {
-    margin: 5px 0;
-  }
-}
-
 /* -----------------------------
    Rotating Christmas Quotes
 ----------------------------- */
@@ -116,17 +69,18 @@ header-container {
 /* -----------------------------
    Home / Headers
 ----------------------------- */
-#home h1,
-#gallery h1 {
-  font-size: 3.5em;
-  margin: 10px 0;
+#home,
+#gallery {
+  padding-top: 0px;    /* space above section content */
+  padding-bottom: 0px; /* space below section content */
+  margin: 0;            /* remove extra default margins */
 }
 
 /* -----------------------------
    Flyer
 ----------------------------- */
 .flyer-container {
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .flyer {
