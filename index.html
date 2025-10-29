@@ -185,11 +185,22 @@
           <div class="content">
             <img src="photos/Name20/photo1.jpg" alt="Name 20 Photo 1">
             <img src="photos/Name20/photo2.jpg" alt="Name 20 Photo 2">
-          </div>
         </div>
+     </div>		
+</div>
         
-      </div>
-    </section>
+		<!-- Countdown moved outside of tiles-grid -->
+  <div id="countdown-container">
+    <h2>Party Countdown!</h2>
+    <div id="countdown">
+      <span id="days">0</span> Days 
+      <span id="hours">0</span> Hours 
+      <span id="minutes">0</span> Minutes 
+      <span id="seconds">0</span> Seconds
+    </div>
+  </div>
+         
+</section>
 
   <footer>
     <p>© 2025 John Welsh. Images provided by ASEC and The Meadows Event Center.</p>
@@ -215,10 +226,8 @@
       "May your days be merry and bright!",
       "It’s the most wonderful time of the year!",
       "Keep calm and jingle all the way!",
-      "All is calm, all is bright.",
       "Believe in the magic of Christmas.",
       "Tis the season to sparkle and shine!",
-      "Santa’s watching — be good!"
     ];
 
     let index = 0;
@@ -252,6 +261,26 @@ for (let i = 0; i < numberOfSnowflakes; i++) {
 }
 </script>
 
+<script>
+function updateCountdown() {
+  const eventDate = new Date("December 20, 2025 18:00:00").getTime();
+  const now = new Date().getTime();
+  const gap = eventDate - now;
+
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+
+  document.getElementById("days").textContent = Math.floor(gap / day);
+  document.getElementById("hours").textContent = Math.floor((gap % day) / hour);
+  document.getElementById("minutes").textContent = Math.floor((gap % hour) / minute);
+  document.getElementById("seconds").textContent = Math.floor((gap % minute) / second);
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
 
 </body>
 </html>

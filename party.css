@@ -217,23 +217,16 @@ footer {
   }
 
   /* Flyer Section */
+  .flyer-main,
   .flyer-left,
   .flyer-right {
-    position: static;
-    transform: none;
-    display: block;
-    width: 90%;
-    max-width: 400px; /* same size as main image */
-    height: auto;
-    margin: 10px auto;
-  }
-
-  .flyer-main {
-    width: 90%;
-    max-width: 400px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    position: static;      /* remove absolute positioning */
+    transform: none;       /* no translate */
+    display: block;        /* stack vertically */
+    width: 90%;            /* same width for all images */
+    max-width: 400px;      /* consistent max width */
+    height: auto;          /* maintain aspect ratio */
+    margin: 10px auto;     /* centered */
   }
 
   .flyer-text {
@@ -257,6 +250,25 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
+
+#countdown-container {
+  text-align: center;       /* centers everything */
+  margin: 20px auto;        /* small vertical spacing */
+}
+
+#countdown-container h2 {
+  margin: 0 0 5px 0;        /* only small space below title */
+  font-size: 2em;
+  color: #FFD700;
+}
+
+#countdown {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+
 
 
 
