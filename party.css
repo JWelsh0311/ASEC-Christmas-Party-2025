@@ -32,13 +32,13 @@ section {
   border-bottom: 0px solid #ccc;
 }
 
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+header-container {
+  display: block; /* stack items vertically */
+  text-align: center; /* center the logo */
   position: relative;
 }
 
+/* Logo stays centered */
 .header-container .logo {
   max-width: 350px;
   width: 60%;
@@ -48,22 +48,21 @@ section {
 }
 
 .navbar {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute;  /* absolute so it doesn't affect logo centering */
+  top: 10px;           /* slightly below top of page */
+  left: 20px;          /* distance from left edge */
 }
 
 .navbar ul {
   display: flex;
-  justify-content: flex-start; /* aligns links to the left */
+  flex-direction: column; /* vertical links */
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .navbar li {
-  margin-right: 15px; /* spacing between links */
+  margin: 5px 0;
 }
 
 .navbar a {
@@ -246,25 +245,6 @@ footer {
 
   .tiles-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-}
-
-/* Responsive navbar for narrow screens or landscape phones */
-@media screen and (max-width: 600px) {
-  .navbar {
-    position: static;       /* move below the logo */
-    transform: none;        /* remove vertical centering */
-    margin: 10px 0 0 0;     /* space above links */
-  }
-
-  .navbar ul {
-    flex-direction: column;   /* stack links vertically */
-    align-items: flex-start;  /* left-align links */
-    padding-left: 0;
-  }
-
-  .navbar li {
-    margin: 5px 0;            /* spacing between links */
   }
 }
 
