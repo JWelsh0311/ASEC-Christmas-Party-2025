@@ -253,7 +253,7 @@ footer {
 
 #countdown-container {
   text-align: center;       /* centers everything */
-  margin: 20px auto;        /* small vertical spacing */
+  margin: 0px auto;        /* small vertical spacing */
 }
 
 #countdown-container h2 {
@@ -267,6 +267,33 @@ footer {
   font-weight: bold;
   color: #fff;
 }
+
+<style>
+  /* Make RSVP fields stack neatly on small screens */
+  @media (max-width: 400px) {
+    .rsvp-fields input {
+      flex: 1 0 90%; /* almost full width on tiny screens */
+      max-width: none;
+    }
+  }
+</style>
+
+/* Reduce padding specifically for RSVP section */
+#rsvp {
+  padding-top: 10px;    /* much smaller than 60px */
+  padding-bottom: 10px; /* optional */
+  margin-top: 0;        /* remove any extra margin */
+}
+
+/* Mobile tweak for RSVP spacing */
+@media screen and (max-width: 480px) {
+  #rsvp {
+    padding-top: 5px;    /* even smaller on phones */
+    padding-bottom: 5px; 
+  }
+}
+
+
 
 
 

@@ -128,17 +128,37 @@
      </div>		
 </div>
         
-		<!-- Countdown moved outside of tiles-grid -->
-  <div id="countdown-container">
-    <h2>Party Countdown!</h2>
-    <div id="countdown">
-      <span id="days">0</span> Days 
-      <span id="hours">0</span> Hours 
-      <span id="minutes">0</span> Minutes 
-      <span id="seconds">0</span> Seconds
-    </div>
+		<!-- Countdown stays inside gallery or wherever it is -->
+<div id="countdown-container" style="margin-bottom:0px;">
+  <h2>Party Countdown!</h2>
+  <div id="countdown">
+    <span id="days">0</span> Days 
+    <span id="hours">0</span> Hours 
+    <span id="minutes">0</span> Minutes 
+    <span id="seconds">0</span> Seconds
   </div>
-         
+</div>
+
+<!-- Close the previous section (gallery) -->
+</section>
+
+<!-- New RSVP section outside of gallery -->
+<section id="rsvp" style="text-align:center; padding-top:10px; padding-bottom:10px; margin-top:0;">
+  <h2 style="font-size:2em; color:#FFD700; margin-bottom:5px;">RSVP!</h2>
+
+  <form id="rsvpForm" style="display:inline-block; text-align:center; max-width:500px; width:90%; margin-top:5px;">
+
+    <div class="rsvp-fields" style="display:flex; justify-content:center; flex-wrap:wrap; gap:5px; margin-bottom:5px;">
+      <input type="text" id="firstName" name="firstName" placeholder="Your First Name" required style="flex:1 0 100px; padding:5px; max-width:150px;">
+      <input type="text" id="lastName" name="lastName" placeholder="Your Last Name" required style="flex:1 0 100px; padding:5px; max-width:150px;">
+      <input type="text" id="plusOneFirst" name="plusOneFirst" placeholder="Guest First Name" style="flex:1 0 100px; padding:5px; max-width:150px;">
+    </div>
+
+    <button type="submit" style="padding:8px 16px;">Submit RSVP</button>
+
+  </form>
+
+  <p id="responseMessage" style="margin-top:5px; font-weight:bold;"></p>
 </section>
 
   <footer>
@@ -202,7 +222,10 @@ for (let i = 0; i < numberOfSnowflakes; i++) {
 
 <script>
 function updateCountdown() {
-  const eventDate = new Date("December 20, 2025 18:00:00").getTime();
+  // Local time version — browser interprets this as PST if your computer is set to PST
+  const eventDate = new Date(2025, 11, 20, 18, 0, 0).getTime(); 
+  // Month is 0-based: 11 = December
+
   const now = new Date().getTime();
   const gap = eventDate - now;
 
@@ -220,6 +243,33 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 </script>
+
+<script>
+document.getElementById("rsvpForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+
+  fetch(https://script.google.com/macros/s/AKfycbxHfL6JwB0AFyEOLRwhQrW7kcNn0C9dR3KZhJYZuMkvlF_Lm6w7fW-I8Bu0Q4dyHF46/exec, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    document.getElementById("responseMessage").textContent =
+      "✅ Thank you for your response!";
+    document.getElementById("rsvpForm").reset();
+  })
+  .catch((error) => {
+    document.getElementById("responseMessage").textContent =
+      "⚠️ Something went wrong. Please try again.";
+    console.error(error);
+  });
+});
+</script>
+
 
 </body>
 </html>
