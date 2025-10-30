@@ -42,6 +42,7 @@
     <p>The Meadows Event Center</p>
     <p>1045 Inglewood Dr, Fernley, NV 89408</p>
     <p>Saturday December 20, 2025</p>
+	<p>Time: 6PM to 9PM</p>
   </div>
 
   <!-- Side images forming triangle -->
@@ -251,7 +252,7 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   const formData = new FormData(this);
   const data = Object.fromEntries(formData.entries());
 
-  fetch("https://script.google.com/macros/s/AKfycbxHfL6JwB0AFyEOLRwhQrW7kcNn0C9dR3KZhJYZuMkvlF_Lm6w7fW-I8Bu0Q4dyHF46/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbyAJwGgVp9QjU3hthhfY046rPIwm9ym0sRLJ0X5UCM4QRT2kJ2Ob1E9jMXc42kTSycM/exec", {
     method: "POST",
     mode: "no-cors",
     headers: { "Content-Type": "application/json" },
@@ -269,7 +270,6 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   });
 });
 </script>
-
 
 </body>
 </html>
