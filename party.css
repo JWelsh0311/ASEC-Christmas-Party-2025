@@ -293,6 +293,65 @@ footer {
   }
 }
 
+/* -----------------------------
+   Dinner Menu Section
+----------------------------- */
+#menu {
+  margin: 0 !important;
+  padding: 5px 0 !important;
+}
+
+#menu h2 {
+  font-size: 2em;
+  color: #FFD700;
+  margin: 5px 0 !important;
+}
+
+#menu .tile {
+  margin: 0 !important;
+}
+
+#menu .content {
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 3px;
+}
+
+#menu .content ul {
+  padding-left: 0;
+  margin: 5px 0;
+  list-style: none;
+  text-align: center;
+}
+
+#menu .content li {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1em;
+  color: #fff;
+  margin: 10px 0;
+}
+
+/* Optional: make content padding consistent with other tiles */
+#menu .content {
+  padding: 10px 12px;
+}
+
+/* Small screen tweak */
+@media (max-width: 480px) {
+  #menu .tile {
+    max-width: 320px;
+  }
+}
+
+/* Reduce space above tiles under Party Photos! */
+#gallery h2 {
+  margin-bottom: 10px; /* default was larger, smaller space now */
+}
+
+#gallery .tiles-grid {
+  margin-top: 5px; /* optional: shrink space above tiles */
+}  
 
 
 
